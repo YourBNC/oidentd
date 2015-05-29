@@ -23,6 +23,9 @@ IDENTFAILURE
 ````
 Replying with IDENTFAILURE or otherwise terminating the connection will result in oidentd trying the next server, or, if no other servers are available, identifying the connection as IdentFailure.
 
+##Halp! It segfaults on start!
+This is a known bug due to version discrepancies between linux distros. The solution is easy. You have to run the relex.sh script and rebuild oidentd.
+
 ##TODO
 
 * Make oidentd reply with a proper ident failure instead of with a "successful" ident of IdentFailure.
