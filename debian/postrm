@@ -1,0 +1,18 @@
+#!/bin/sh
+# post removal script for the Debian GNU/Linux oidentd package
+
+set -e
+
+if [ -x /usr/sbin/update-inetd ]; then
+	if [ -x /usr/sbin/identd ]; then
+		update-inetd --add "ident		stream	tcp	nowait	nobody	/usr/sbin/identd identd -i"
+	fi
+fi
+
+if [ "$1" = purge ]; then
+	if [ -x /usr/sbin/deluser ]; then
+		deluser --system --quiet oident
+	fi
+fi
+
+#DEBHELPER#

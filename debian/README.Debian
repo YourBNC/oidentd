@@ -1,0 +1,8 @@
+Documentation:
+==============
+
+Rick Dicaire <kritek@gmail.com> discovered, that by default if ipv4 and ipv6
+addresses for an interface are present, oidentd only uses the ipv4 address. 
+
+A workaround is to set /proc/sys/net/ipv6/bindv6only to 1 according to
+http://www.kernel.org/doc/man-pages/online/pages/man7/ipv6.7.html 

@@ -1,0 +1,10 @@
+#!/bin/sh
+# pre remove script for the Debian GNU/Linux oidentd package
+
+set -e
+
+if [ -x /usr/sbin/update-inetd ]; then
+	update-inetd --pattern "oidentd" --remove ident
+fi
+
+#DEBHELPER#

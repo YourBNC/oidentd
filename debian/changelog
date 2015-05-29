@@ -1,0 +1,379 @@
+oidentd (2.0.9-1) unstable; urgency=low
+
+  * Added request feature.
+  * Updated to CVS
+
+ -- Roelf Wichertjes <contact@roelf.org>  Fri, 26 May 2015 17:00:00 +0200
+
+oidentd (2.0.8-5) unstable; urgency=low
+
+  * QA upload.
+  * Don’t ship changes to debian/ as a patch, just apply them.
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Tue, 04 Dec 2012 20:27:25 +0100
+
+oidentd (2.0.8-4.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add patch to add -P in the init script with either iproute or net-tools
+    (Thanks Andreas Henriksson)
+  * Add dependency on iproute | net-tools (Closes: #672926)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Mon, 03 Dec 2012 23:42:59 +0100
+
+oidentd (2.0.8-4) unstable; urgency=low
+
+  * Bind to ipv6-socket by default as well (Closes: #533604)
+    Patch supplied by Fabian Knittel <fabian.knittel@avona.com>
+
+ -- Stefan Bauer <stefan.bauer@cubewerk.de>  Mon, 01 Mar 2010 20:27:22 +0100
+
+oidentd (2.0.8-3) unstable; urgency=low
+
+  * Migrating logcheck ignore database from logcheck-database package to
+    oidentd
+  * Adding ignore entry for daemons that required local users (Closes: #260660)
+
+ -- Stefan Bauer <stefan.bauer@cubewerk.de>  Tue, 01 Sep 2009 15:53:27 +0200
+
+oidentd (2.0.8-2) unstable; urgency=low
+
+  * New Maintainer (Closes: #509671)
+  * Acknowledge NMU changes
+  * changed file source address in copyright file
+  * removed ADDENDUM: example stanza in copyright file
+  * fixed old fsf address in copyright file
+  * added LSB functions to init script (Closes: #508137 #461338)
+  * mentioned workaround in README.Debian to bind socket to ipv4 and
+    ipv6-addresses by default  (Closes: #520134)
+
+ -- Stefan Bauer <stefan.bauer@cubewerk.de>  Sat, 29 Aug 2009 16:20:38 +0200
+
+oidentd (2.0.8-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Added LSB formatted dependency info in init.d script (closes: #462212)
+
+ -- Peter Eisentraut <petere@debian.org>  Tue, 01 Apr 2008 22:34:32 +0200
+
+oidentd (2.0.8-1.1) unstable; urgency=high
+
+  * Non-maintainer upload during BSP.
+  * Fix unconditional use of deluser in postrm (Closes: #417038).
+
+ -- Luk Claes <luk@debian.org>  Thu, 17 May 2007 02:02:54 +0200
+
+oidentd (2.0.8-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Martin Waitz <tali@debian.org>  Sun,  2 Jul 2006 01:05:50 +0200
+
+oidentd (2.0.7-5) unstable; urgency=low
+
+  * Don't choke on kernels without masquerade support, Closes: #354006
+
+ -- Martin Waitz <tali@debian.org>  Tue,  7 Mar 2006 21:37:21 +0100
+
+oidentd (2.0.7-4) unstable; urgency=low
+
+  * Apply patch from Christof Douma to open netfilter file descriptors
+    before dropping root, Closes: #266722
+  * debian/{control,postrm,postinst}: use oident user and group for daemon,
+    Closes: #295630
+  * debian/postrm: don't try to remove oidentd from inet.conf
+  * debian/control: bump Standards Version
+
+ -- Martin Waitz <tali@debian.org>  Sat, 28 Jan 2006 12:51:33 +0100
+
+oidentd (2.0.7-3) unstable; urgency=low
+
+  * fix parsing of new ip_conntrack format, Closes: #292779
+
+ -- Martin Waitz <tali@debian.org>  Sat,  5 Feb 2005 00:35:55 +0100
+
+oidentd (2.0.7-2) unstable; urgency=high
+
+  * urgency high because it fixes a serious bug in the copyright file.
+  * debian/copyright: include GFDL, Closes: #292239
+  * debian/control: update Standards-Version and description
+  * debian/init: remove support for upgrade from version < 2
+  * README: don't reference INSTALL, Closes: #253199
+
+ -- Martin Waitz <tali@debian.org>  Fri, 28 Jan 2005 23:50:07 +0100
+
+oidentd (2.0.7-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/default: use -f by default, as suggested by Bug#217194
+  * debian/default: Fix comment about /etc/oidentd_masq.conf, Closes: #226962
+  * debian/oidentd_masq.conf: update comment
+  * debian/rules,install: use CDBS for packaging
+  * debian/compat: use debhelper version 4
+  * debian/control: update Build-Depends
+
+ -- Martin Waitz <tali@debian.org>  Mon, 12 Jan 2004 01:24:13 +0100
+
+oidentd (2.0.5-1) unstable; urgency=low
+
+  * New upstream release
+    - includes better config parsing, Closes: #176447
+  * Don't strip '-r' option, Closes: #176467
+
+ -- Martin Waitz <tali@debian.org>  Wed, 26 Feb 2003 22:46:31 +0100
+
+oidentd (2.0.4-2) unstable; urgency=low
+
+  * I guess new bisons are more strict, fix .y file, Closes: #165332
+
+ -- Martin Waitz <tali@debian.org>  Fri, 18 Oct 2002 20:26:54 +0200
+
+oidentd (2.0.4-1) unstable; urgency=low
+
+  * New upstream release
+  * remove oidentdconfig, it's not needed any more post-woody.
+    Closes: #139203, #145090
+  * Add patch from Ewen McNeill to allow default router as
+    identd proxy. Closes: #157832
+
+ -- Martin Waitz <tali@debian.org>  Thu, 22 Aug 2002 19:11:42 +0200
+
+oidentd (2.0.3+cvs20020603-1) unstable; urgency=high
+
+  * New upstream source taken from cvs
+    - only changes one source line, fixing a broken memory allocation
+  * Urgency set to high because 2.0.3-1 had a lot more bugs
+
+ -- Martin Waitz <tali@debian.org>  Mon,  3 Jun 2002 10:58:10 +0200
+
+oidentd (2.0.3+cvs20020418-1) unstable; urgency=low
+
+  * New upstream source taken from cvs
+    - includes minor bugfixes, Closes: #115589
+
+ -- Martin Waitz <tali@debian.org>  Thu, 18 Apr 2002 22:32:02 +0200
+
+oidentd (2.0.3-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: Standards-Version 3.5.6.1
+
+ -- Martin Waitz <tali@debian.org>  Mon, 25 Mar 2002 01:39:45 +0100
+
+oidentd (2.0.1-2) unstable; urgency=low
+
+  * debian/oidentdconfig: generate better oidentd.conf
+    this fixes one part of #116694.
+
+ -- Martin Waitz <tali@debian.org>  Mon,  5 Nov 2001 00:45:45 +0100
+
+oidentd (2.0.1-1) unstable; urgency=low
+
+  * New upstream version
+    - fixes -f command line argument, Closes: #113721
+  * debian/rules: added new --enable-debug to configure
+  * debian/control: mention IPv6 support in Description
+
+ -- Martin Waitz <tali@debian.org>  Sat,  6 Oct 2001 23:18:11 +0200
+
+oidentd (1.9.9.1+cvs20010921-1) unstable; urgency=low
+
+  * New upstream source taken from cvs
+    - fixes port binding, Closes: #113043
+    - more masquarade fixes, Closes: #110540 (again ;)
+
+ -- Martin Waitz <tali@debian.org>  Fri, 21 Sep 2001 15:19:27 +0200
+
+oidentd (1.9.9.1-1) unstable; urgency=low
+
+  * New upstream version
+    - many bugfixes, including masquarade support, Closes: #110540
+  * debian/rules,docs: use NEWS for changelog,
+    include 1.x changelog in documentation
+  * debian/copyright: updated web page location
+
+ -- Martin Waitz <tali@debian.org>  Tue, 18 Sep 2001 11:11:06 +0200
+
+oidentd (1.9.9+cvs20010905-1) unstable; urgency=low
+
+  * New upstream source taken from cvs
+    - uses ~/.oidentd.conf instead of ~/.oidentd_conf
+  * #1109875 was a typo (Closes: #110975)
+  * debian/control: set priority to extra,
+    somehow last uploads made it optional
+
+ -- Martin Waitz <tali@debian.org>  Sun,  9 Sep 2001 14:52:53 +0200
+
+oidentd (1.9.9-2) unstable; urgency=low
+
+  * debian/control: added bison, flex to build-depends
+    (Closes: #110498, #1109875)
+
+ -- Martin Waitz <tali@debian.org>  Tue,  4 Sep 2001 15:03:52 +0200
+
+oidentd (1.9.9-1) unstable; urgency=low
+
+  * New upstream version
+    - IPv6 support, Closes: #92232
+    - new, more flexible configuration
+    - doesn't support inetd any more, Closes: #55021, #62149, #71964
+    - old bugs are already fixed, Closes: #67527, #76682
+    - includes (fixed!) version of my patch regarding logging, Closes: #106782
+  * debian/oidentdconfig: wrote script to convert config files, please test!
+  * debian/rules: install new config files and oidentdconfig
+  * debian/rules,docs: removed INSTALL, doesn't contain anything important any more
+  * debian/default: change comments according to new syntax
+  * debian/init: removed inetd test, always run as daemon
+  * debian/init: remove old options from OIDENT_OPTIONS
+  * debian/postinst: don't add inetd entry, remove old inetd entries
+  * debian/postinst: run oidentdconfig to test config
+  * debian/prerm: instead of disabling oidentd in inetd.conf, remove it
+  * debian/copyright: small cleanups
+  * debian/control: compliant to Standards-Version 3.5.6.0
+
+ -- Martin Waitz <tali@debian.org>  Tue, 21 Aug 2001 16:43:32 +0200
+
+oidentd (1.7.1-8) unstable; urgency=low
+
+  * removed logcheck ignore file, it is being provided by logcheck
+    (Closes: #105472, #106196)
+  * again updated config.{guess,sub}
+
+ -- Martin Waitz <tali@debian.org>  Thu, 26 Jul 2001 16:04:35 +0200
+
+oidentd (1.7.1-7) unstable; urgency=low
+
+  * updated config.{guess,sub} from current libtool
+  * changed oidentd.c to compile with gcc-3.0
+    (Closes: #103156, thanks to LaMont Jones for the patch)
+
+ -- Martin Waitz <tali@debian.org>  Tue,  3 Jul 2001 15:33:26 +0200
+
+oidentd (1.7.1-6) unstable; urgency=low
+
+  * removed in.oidentd from man-page (Closes: #99584)
+  * compliant to Standards-Version 3.5.5.0
+
+ -- Martin Waitz <tali@debian.org>  Fri,  8 Jun 2001 15:37:23 +0200
+
+oidentd (1.7.1-5) unstable; urgency=low
+
+  * New Maintainer.
+  * Honor DEB_BUILD_OPTIONS, now using debhelper 3
+  * Add documentation to /etc/identd.spoof.
+  * Add logcheck ignore file. Closes: #89177
+  * init script now only checks for existance of daemon
+  * move daemon configuration to /etc/default/
+  * now complies to Standards-Version 3.5.2.0
+  * add pointer to "-F" to config files. Closes: #80824
+  * changed linux-masq error logging. Closes: #75952
+  * use same default config for init/inetd method (-s -m)
+  * fixed typo in oidentd(8). Closes: #78817
+  * some cleanup
+
+ -- Martin Waitz <tali@stud.uni-erlangen.de>  Thu, 29 Mar 2001 15:21:01 +0200
+
+oidentd (1.7.1-4) unstable; urgency=low
+
+  * Yet another upload
+  * killed preinst, dpkg handles it for us. Closes: #92076
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Thu, 29 Mar 2001 07:51:57 -0800
+
+oidentd (1.7.1-3) unstable; urgency=low
+
+  * Fixing bugs
+  * Maintainer scripts check for update-inetd before using it.
+    Closes: #88916, #88917, #88921
+  * added empty identd.spoof to /etc, marked as a conffile. Closes: #81136
+  * removed the stamps in rules file, Closes: #75084
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Wed, 14 Mar 2001 15:20:23 -0800
+
+oidentd (1.7.1-2) unstable; urgency=low
+
+  * Orphaning package
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Wed, 21 Feb 2001 12:56:47 -0800
+
+oidentd (1.7.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Mon, 23 Oct 2000 16:29:06 -0700
+
+oidentd (1.7.0-2) frozen unstable; urgency=low
+
+  * Fixed the setsockopt() bug, patch sent upstream
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Wed, 18 Oct 2000 09:30:05 -0700
+
+oidentd (1.7.0-1) frozen unstable; urgency=low
+
+  * New upstream release
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Tue, 17 Oct 2000 09:35:56 -0700
+
+oidentd (1.6.4-3) frozen unstable; urgency=low
+
+  * Ensure oident becomes dominant ident
+  * Closes: #67527
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Fri, 21 Jul 2000 14:16:52 -0700
+
+oidentd (1.6.4-2) frozen unstable; urgency=low
+
+  * Closes: #60111
+  * this is related to my previous upload, I missed the init script.
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Mon, 13 Mar 2000 17:32:30 -0800
+
+oidentd (1.6.4-1) frozen unstable; urgency=low
+
+  * New upstream release
+  * Upstream fixed several bugs
+  * Netfilter support (important for 2.3 and higher linux kernels)
+  * Closes: #56021
+
+ -- Sean 'Shaleh' Perry <shaleh@debian.org>  Fri, 25 Feb 2000 13:43:43 -0800
+
+oidentd (1.6.3-4) unstable; urgency=low
+
+  * Closes: #45343
+  * FHS compliant
+
+ -- Sean E. Perry <shaleh@debian.org>  Mon, 20 Sep 1999 17:34:36 -0700
+
+oidentd (1.6.3-3) unstable; urgency=low
+
+  * bug fixes
+  * closes: #43978, oops
+  * closes: #43983, double oops
+
+ -- Sean E. Perry <shaleh@debian.org>  Fri,  3 Sep 1999 12:23:13 -0700
+
+oidentd (1.6.3-2) unstable; urgency=low
+
+  * Cleaned up the {pre,post}{inst,rm}
+  * added an init script, default is still inetd
+
+ -- Sean E. Perry <shaleh@debian.org>  Tue, 31 Aug 1999 15:04:39 -0700
+
+oidentd (1.6.3-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Sean E. Perry <shaleh@debian.org>  Wed, 25 Aug 1999 03:41:16 -0700
+
+oidentd (1.6.2-0) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sean E. Perry <shaleh@debian.org>  Sat, 29 May 1999 06:07:05 -0400
+
+oidentd (1.6.1-0) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Sean E. Perry <shaleh@debian.org>  Sat, 6 Mar 1999 15:37:05 -0500
+

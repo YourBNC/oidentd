@@ -1,0 +1,6 @@
+Building oidentd for Debian
+--------------------------------
+
+The oidentd source package uses cdbs to apply and remove its patches.
+Please refer to /usr/share/cdbs/ for information about how to
+use cdbs for source packages.

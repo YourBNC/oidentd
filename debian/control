@@ -1,0 +1,26 @@
+Source: oidentd
+Section: net
+Priority: extra
+Build-Depends: debhelper (>= 7), cdbs, autotools-dev
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Standards-Version: 3.8.3
+Homepage: http://ojnk.sourceforge.net/
+
+Package: oidentd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, netbase, adduser, iproute | net-tools
+Provides: ident-server
+Replaces: ident-server
+Conflicts: ident-server, logcheck-database (<= 1.3.3)
+Description: replacement ident daemon
+ An ident (rfc1413) daemon for IPv4 and IPv6.
+ .
+ Oidentd allows users, given the proper permission, to specify the
+ identd response that the server will output when a successful lookup 
+ is completed.  Oidentd also allows for pseudo-random strings
+ (either a prefix, such as "user," followed by a number between 0 and
+ 99999, or 10 pseudo-random characters of the  set 0-9A-Za-z) to be
+ returned  upon the completion of a successful lookup instead of a
+ username or a UID.
+ .
+ Oidentd supports IPv4 masqueraded connections, including netfilter.

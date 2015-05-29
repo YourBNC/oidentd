@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+# remove other ident daemons from inetd
+if [ -x /usr/sbin/update-inetd ]; then
+	update-inetd --remove ident
+fi
+
+adduser --system --group --home / --no-create-home --quiet oident
+
+#DEBHELPER#
