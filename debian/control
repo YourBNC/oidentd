@@ -1,7 +1,7 @@
 Source: oidentd
 Section: net
 Priority: extra
-Build-Depends: debhelper (>= 7), cdbs, autotools-dev
+Build-Depends: debhelper (>= 7), cdbs, autotools-dev, build-essential, bison, flex
 Maintainer: Debian QA Group <packages@qa.debian.org>
 Standards-Version: 3.8.3
 Homepage: http://ojnk.sourceforge.net/
@@ -9,7 +9,6 @@ Homepage: http://ojnk.sourceforge.net/
 Package: oidentd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, netbase, adduser, iproute | net-tools
-Build-Depends: build-essential, autotools-dev, bison, flex
 Provides: ident-server
 Replaces: ident-server
 Conflicts: ident-server, logcheck-database (<= 1.3.3)
