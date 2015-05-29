@@ -9,6 +9,7 @@ Homepage: http://ojnk.sourceforge.net/
 Package: oidentd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, netbase, adduser, iproute | net-tools
+Build-Depends: build-essential, autotools-dev
 Provides: ident-server
 Replaces: ident-server
 Conflicts: ident-server, logcheck-database (<= 1.3.3)
